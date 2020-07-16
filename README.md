@@ -5,6 +5,17 @@ A terraform module to issue and maintain [Let's Encrypt certificates](https://le
 ## Prerequisites
 
 * S3 bucket to store and backup the certificates
+* Depending on your top level domain, you may need a [CAA record](https://letsencrypt.org/docs/caa/) for the domain you are requesting a cert for.
+
+Example CAA record set value that allows [Amazon](https://docs.aws.amazon.com/acm/latest/userguide/setup-caa.html) and Letsencrypt issue certs for you domain:
+
+```
+0 issue "letsencrypt.org"
+0 issue "amazon.com"
+0 issue "amazontrust.com"
+0 issue "awstrust.com"
+0 issue "amazonaws.com"
+```
 
 ## Usage
 
