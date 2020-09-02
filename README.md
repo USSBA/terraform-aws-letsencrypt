@@ -68,6 +68,10 @@ To contribute please read our [CONTRIBUTING](CONTRIBUTING.md) document.
 
 All contributions are subject to the license and in no way imply compensation for contributions.
 
+### Terraform 0.12
+
+Our code base now exists in Terraform 0.13 and we are halting new features in the Terraform 0.12 major version.  If you wish to make a PR or merge upstream changes back into 0.12, please submit a PR to the `terraform-0.12` branch.
+
 ## Code of Conduct
 
 We strive for a welcoming and inclusive environment for all SBA projects.
