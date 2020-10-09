@@ -1,11 +1,19 @@
-# v2.0.1
+# CHANGELOG
 
-- aws v3.* support
+## v2.1.0
 
-# v2.0.0
+* Module now only requires an ECS cluster name and will look up the ARN
+* ECS cluster variable name changed to `cluster_name`.
+* Updated documentation for clarity and ease of use, added code validation to CircleCI config, and MD linter to precommit config
 
-- Terraform 0.13 Upgrade
+## v2.0.1
 
-# v1.0.0
+* aws v3.* support
 
-- Initial Release supporting 0.12
+## v2.0.0
+
+* Terraform 0.13 Upgrade
+
+## v1.0.0
+
+* Initial Release supporting 0.12

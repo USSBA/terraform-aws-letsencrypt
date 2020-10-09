@@ -2,6 +2,12 @@
 
 A terraform module to issue and maintain [Let's Encrypt certificates](https://letsencrypt.org/) for AWS using Fargate. The module utilizes the [USSBA/sba-certificate-renewal](https://hub.docker.com/r/ussba/sba-certificate-renewal) docker image to facilitate the renewing of certificates. For more insight into how this all works, check out the [GitHub repo](https://github.com/USSBA/sba-certificate-renewal).
 
+Features:
+
+* Straightforward and sane defaults
+* Wildcard cert issued by default
+* Ability to notify an SNS topic
+
 ## Prerequisites
 
 * S3 bucket to store and backup the certificates
@@ -29,7 +35,7 @@ Example CAA record set value that allows [Amazon](https://docs.aws.amazon.com/ac
 * `registration_email` - The email address under which the LetsEncrypt certificate will be created.
 * `cert_hostname` - The hostname to be registered. Do not include wildcard, e.g. `cheeseburger.mydomain.com`
 * `hosted_zone_id` - The Route53 Hosted Zone ID of the domain needing a cert. Used for domain validation.
-* `ecs_cluster_arn` - The ARN of the ECS cluster where the fargate task should run.
+* `cluster_name` - The name of the ECS cluster where the fargate task should run.
 * `subnet_ids` - A list of subnet id's that the task can run on.
 
 #### Optional
@@ -49,14 +55,14 @@ Example CAA record set value that allows [Amazon](https://docs.aws.amazon.com/ac
 ```terraform
 module "my-letsencrypt-renewal-task" {
   source             = "USSBA/letsencrypt/aws"
-  version            = "1.0.0"
+  version            = "~> 2.1"
   service_name       = "letsencrypt-renewal"
   environment_name   = "cheeseburger"
   aws_s3_bucket_name = "my-bucket-name"
   registration_email = "my-email@cheeseburger.cool"
   cert_hostname      = "cheeseburger.mydomain.com"
   hosted_zone_id     = "Z000000000000"
-  ecs_cluster_arn    = "arn:aws:ecs:us-east-1:123456789012:cluster/cheeseburger"
+  cluster_name       = "cheeseburger"
   subnet_ids         = ["subnet-a46032fc"]
 }
 ```
