@@ -24,7 +24,7 @@ resource "aws_cloudwatch_event_rule" "schedule_rule" {
 
 resource "aws_cloudwatch_event_target" "fargate_scheduled_task" {
   rule     = aws_cloudwatch_event_rule.schedule_rule.name
-  arn      = var.ecs_cluster_arn
+  arn      = "arn:aws:ecs:${local.region}:${local.account_id}:cluster/${var.cluster_name}"
   role_arn = aws_iam_role.schedule_role.arn
 
   ecs_target {

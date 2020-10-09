@@ -27,9 +27,9 @@ variable "hosted_zone_id" {
   type        = string
   description = "Route53 Hosted Zone ID"
 }
-variable "ecs_cluster_arn" {
+variable "cluster_name" {
   type        = string
-  description = "The ARN of the ECS cluster where the container should run."
+  description = "The name of the ECS cluster where the fargate task should run."
 }
 variable "subnet_ids" {
   type        = list(string)
