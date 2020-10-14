@@ -6,6 +6,7 @@ Features:
 
 * Straightforward and sane defaults
 * Wildcard cert issued by default
+* Automatic renewal without a persistent server
 * Ability to notify an SNS topic
 
 ## Prerequisites
