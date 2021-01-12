@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.2.0
+
+* Support for Terraform versions 0.13 and above to (but not including) 1.0
+
 ## v2.1.0
 
 * Module now only requires an ECS cluster name and will look up the ARN
