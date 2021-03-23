@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v3.0.0
+
+* Updating the default value for the `container_name` variable. The previous image is deprecated and will eventually not be available.
+
 ## v2.2.0
 
 * Support for Terraform versions 0.13 and above to (but not including) 1.0

@@ -44,7 +44,7 @@ variable "subnet_ids" {
 variable "container_name" {
   type        = string
   description = "Letsencrypt Docker Image"
-  default     = "ussba/sba-certificate-renewal:latest"
+  default     = "public.ecr.aws/ussba/sba-certificate-renewal:latest"
 }
 variable "container_cpu" {
   type        = number

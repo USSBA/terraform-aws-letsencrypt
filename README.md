@@ -1,6 +1,6 @@
 # terraform-aws-letsencrypt
 
-A terraform module to issue and maintain [Let's Encrypt certificates](https://letsencrypt.org/) for AWS using Fargate. The module utilizes the [USSBA/sba-certificate-renewal](https://hub.docker.com/r/ussba/sba-certificate-renewal) docker image to facilitate the renewing of certificates. For more insight into how this all works, check out the [GitHub repo](https://github.com/USSBA/sba-certificate-renewal).
+A terraform module to issue and maintain [Let's Encrypt certificates](https://letsencrypt.org/) for AWS using Fargate. The module utilizes the [USSBA/sba-certificate-renewal](https://gallery.ecr.aws/ussba/sba-certificate-renewal) docker image to facilitate the renewing of certificates. For more insight into how this all works, check out the [GitHub repo](https://github.com/USSBA/sba-certificate-renewal).
 
 Features:
 
@@ -41,7 +41,7 @@ Example CAA record set value that allows [Amazon](https://docs.aws.amazon.com/ac
 
 #### Optional
 
-* `container_name` - Default `ussba/sba-certificate-renewal:latest`; The Letsencrypt certificate renewal Docker Image. Highly recommended to not change this unless you have your own working process.
+* `container_name` - Default `public.ecr.aws/ussba/sba-certificate-renewal:latest`; The Letsencrypt certificate renewal Docker Image. Highly recommended to not change this unless you have your own working process.
 * `container_cpu` - Default `256`; How much CPU should be reserved for the container (in aws cpu-units).
 * `container_memory` - Default `512`; How much Memory should be reserved for the container (in MB).
 * `dry_run` - Default `false`; Enable or disable dry run of renewal process.
