@@ -1,3 +1,7 @@
+# DISCLAIMER
+
+**THE USSBA WILL BE DEPRECATING THIS MODULE IN THE NEXT 6 MONTHS AND WILL NO LONGER BE MAKING UPDATES TO THIS MODULE.**
+
 # terraform-aws-letsencrypt
 
 A terraform module to issue and maintain [Let's Encrypt certificates](https://letsencrypt.org/) for AWS using Fargate. The module utilizes the [USSBA/sba-certificate-renewal](https://gallery.ecr.aws/ussba/sba-certificate-renewal) docker image to facilitate the renewing of certificates. For more insight into how this all works, check out the [GitHub repo](https://github.com/USSBA/sba-certificate-renewal).
